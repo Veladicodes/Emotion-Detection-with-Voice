@@ -1,0 +1,150 @@
+{
+  "timestamp": "2025-11-06T08:21:23.526806Z",
+  "filename": "03-01-03-01-01-01-01.wav",
+  "stages": [
+    {
+      "stage": "1. AUDIO_LOADED",
+      "data": {
+        "sample_rate": 48000,
+        "duration_seconds": 3.47,
+        "waveform_shape": "(166567,)",
+        "dtype": "float32",
+        "num_channels": 1,
+        "min_amplitude": -0.048889,
+        "max_amplitude": 0.058502,
+        "mean_amplitude": 1e-06,
+        "status": "\u2713 Audio decoded successfully"
+      }
+    },
+    {
+      "stage": "2. RESAMPLING",
+      "data": {
+        "original_sample_rate": 48000,
+        "target_sample_rate": 22050,
+        "new_waveform_shape": "torch.Size([1, 76517])",
+        "resampled": "Yes",
+        "status": "\u2713 Resampling complete"
+      }
+    },
+    {
+      "stage": "4. MEL_SPECTROGRAM",
+      "data": {
+        "sample_rate": 22050,
+        "n_fft": 1024,
+        "hop_length": 256,
+        "n_mels": 128,
+        "mel_shape": "torch.Size([1, 128, 299])",
+        "mel_min": 0.0,
+        "mel_max": 27.548323,
+        "mel_mean": 0.078963,
+        "status": "\u2713 MelSpectrogram generated"
+      }
+    },
+    {
+      "stage": "5. DB_CONVERSION",
+      "data": {
+        "db_shape": "torch.Size([1, 128, 299])",
+        "db_min": -100.0,
+        "db_max": 14.400951,
+        "db_mean": -52.436119,
+        "transform": "AmplitudeToDB",
+        "status": "\u2713 dB conversion complete"
+      }
+    },
+    {
+      "stage": "6. NORMALIZATION",
+      "data": {
+        "before_mean": -52.436119,
+        "before_std": 24.766062,
+        "after_mean": 0.0,
+        "after_std": 1.0,
+        "normalized_shape": "torch.Size([1, 128, 299])",
+        "method": "z-score (mean=0, std=1)",
+        "formula": "(x - mean) / (std + 1e-6)",
+        "status": "\u2713 Normalization complete"
+      }
+    },
+    {
+      "stage": "7. RESIZE",
+      "data": {
+        "original_shape": "torch.Size([1, 128, 299])",
+        "target_size": "(128, 128)",
+        "final_shape": "torch.Size([1, 128, 128])",
+        "interpolation_method": "bilinear",
+        "align_corners": false,
+        "status": "\u2713 Resize complete"
+      }
+    },
+    {
+      "stage": "PARAMETER_VALIDATION",
+      "data": {
+        "training_params": {
+          "SAMPLE_RATE": 22050,
+          "N_MELS": 128,
+          "N_FFT": 1024,
+          "HOP_LENGTH": 256,
+          "TARGET_SIZE": 128,
+          "POWER": 2.0,
+          "NORMALIZE_METHOD": "z-score"
+        },
+        "inference_params": {
+          "SAMPLE_RATE": 22050,
+          "N_MELS": 128,
+          "N_FFT": 1024,
+          "HOP_LENGTH": 256,
+          "TARGET_SIZE": 128,
+          "POWER": 2.0,
+          "NORMALIZE_METHOD": "z-score"
+        },
+        "mismatches": "None",
+        "status": "\u2713 All parameters match"
+      }
+    },
+    {
+      "stage": "8. MODEL_INPUT_VALIDATION",
+      "data": {
+        "input_shape": "(1, 1, 128, 128)",
+        "expected_shape": "(1, 1, 128, 128)",
+        "shape_match": "\u2713 Yes",
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "min_value": -1.904021,
+        "max_value": 2.697568,
+        "has_nan": false,
+        "has_inf": false,
+        "status": "\u2713 Input valid"
+      }
+    },
+    {
+      "stage": "9. MODEL_INFERENCE",
+      "data": {
+        "model_name": "best_efficientnet_v2_m+vgg16+densenet121.pt",
+        "device": "cpu",
+        "inference_time_ms": 2359.91,
+        "logits_shape": "(7,)",
+        "logits": [
+          5.3e-05,
+          4.4e-05,
+          0.356077,
+          0.032718,
+          0.005417,
+          0.605666,
+          2.6e-05
+        ],
+        "probabilities": [
+          0.120503,
+          0.120502,
+          0.172035,
+          0.124504,
+          0.121151,
+          0.220806,
+          0.1205
+        ],
+        "predicted_class_index": 5,
+        "predicted_emotion": "sad",
+        "confidence": 0.220806,
+        "status": "\u2713 Inference complete"
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+# PHASE 5 TIER-0: Docker ignore file
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+
+# Environment
+.env
+.env.local
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Models (mount separately)
+models/*.pt
+models/*.pth
+*.pt
+*.pth
+
+# Data
+Data/
+phase3_outputs/
+training_outputs/
+
+# Documentation
+*.md
+docs/
+
+# Git
+.git/
+.gitignore
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+

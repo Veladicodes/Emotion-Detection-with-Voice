@@ -1,0 +1,6 @@
+{
+    "Model": "efficientnet_v2_m+vgg16+densenet121",
+    "Type": "Ensemble",
+    "Val_Acc": 0.7441163885323063,
+    "Val_F1": 0.744173320501947
+}

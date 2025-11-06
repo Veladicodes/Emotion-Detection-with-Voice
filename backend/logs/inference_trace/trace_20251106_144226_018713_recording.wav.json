@@ -1,0 +1,170 @@
+{
+  "timestamp": "2025-11-06T14:42:26.018713Z",
+  "filename": "recording.wav",
+  "stages": [
+    {
+      "stage": "1. AUDIO_LOADED",
+      "data": {
+        "sample_rate": 48000,
+        "duration_seconds": 3.437,
+        "waveform_shape": "(164964,)",
+        "dtype": "float32",
+        "num_channels": 1,
+        "min_amplitude": -0.066132,
+        "max_amplitude": 0.084229,
+        "mean_amplitude": -1e-06,
+        "status": "\u2713 Audio decoded successfully"
+      }
+    },
+    {
+      "stage": "2. RESAMPLING",
+      "data": {
+        "original_sample_rate": 48000,
+        "target_sample_rate": 22050,
+        "new_waveform_shape": "(88200,)",
+        "resampled": "Yes",
+        "status": "\u2713 Resampling complete"
+      }
+    },
+    {
+      "stage": "CLEANING",
+      "data": {
+        "noise_reduction": "Applied (noisereduce)",
+        "rms_normalization": "Applied",
+        "duration_fix": "Padded/trimmed to 4.0s",
+        "final_samples": 88200,
+        "expected_samples": 88200
+      }
+    },
+    {
+      "stage": "4. MEL_SPECTROGRAM",
+      "data": {
+        "sample_rate": 22050,
+        "n_fft": 1024,
+        "hop_length": 256,
+        "n_mels": 128,
+        "mel_shape": "torch.Size([1, 128, 345])",
+        "mel_min": 0.0,
+        "mel_max": 2390572.75,
+        "mel_mean": 1317.884277,
+        "status": "\u2713 MelSpectrogram generated"
+      }
+    },
+    {
+      "stage": "5. DB_CONVERSION",
+      "data": {
+        "db_shape": "torch.Size([1, 128, 345])",
+        "db_min": -100.0,
+        "db_max": 63.785019,
+        "db_mean": -58.022049,
+        "transform": "AmplitudeToDB",
+        "status": "\u2713 dB conversion complete"
+      }
+    },
+    {
+      "stage": "6. NORMALIZATION",
+      "data": {
+        "before_mean": -58.022049,
+        "before_std": 51.256142,
+        "after_mean": -0.0,
+        "after_std": 1.0,
+        "normalized_shape": "torch.Size([1, 128, 345])",
+        "method": "z-score (mean=0, std=1)",
+        "formula": "(x - mean) / (std + 1e-6)",
+        "status": "\u2713 Normalization complete"
+      }
+    },
+    {
+      "stage": "7. RESIZE",
+      "data": {
+        "original_shape": "torch.Size([1, 128, 345])",
+        "target_size": "(128, 128)",
+        "final_shape": "torch.Size([1, 128, 128])",
+        "interpolation_method": "bilinear",
+        "align_corners": false,
+        "status": "\u2713 Resize complete"
+      }
+    },
+    {
+      "stage": "PARAMETER_VALIDATION",
+      "data": {
+        "training_params": {
+          "SAMPLE_RATE": 22050,
+          "TARGET_DURATION": 4.0,
+          "TARGET_SAMPLES": 88200,
+          "N_MELS": 128,
+          "N_FFT": 1024,
+          "HOP_LENGTH": 256,
+          "DESIRED_TIME_FRAMES": 128,
+          "NOISE_REDUCTION": true,
+          "RMS_NORMALIZATION": true,
+          "PAD_TRIM": true,
+          "SCALE": "dB",
+          "NORMALIZATION": "zscore"
+        },
+        "inference_params": {
+          "SAMPLE_RATE": 22050,
+          "TARGET_DURATION": 4.0,
+          "TARGET_SAMPLES": 88200,
+          "N_MELS": 128,
+          "N_FFT": 1024,
+          "HOP_LENGTH": 256,
+          "DESIRED_TIME_FRAMES": 128,
+          "NOISE_REDUCTION": true,
+          "RMS_NORMALIZATION": true,
+          "PAD_TRIM": true,
+          "SCALE": "dB",
+          "NORMALIZATION": "zscore"
+        },
+        "mismatches": "None",
+        "status": "\u2713 All parameters match"
+      }
+    },
+    {
+      "stage": "8. MODEL_INPUT_VALIDATION",
+      "data": {
+        "input_shape": "(1, 1, 128, 128)",
+        "expected_shape": "(1, 1, 128, 128)",
+        "shape_match": "\u2713 Yes",
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "min_value": -0.818984,
+        "max_value": 2.353942,
+        "has_nan": false,
+        "has_inf": false,
+        "status": "\u2713 Input valid"
+      }
+    },
+    {
+      "stage": "9. MODEL_INFERENCE",
+      "data": {
+        "model_name": "best_efficientnet_v2_m+vgg16+densenet121.pt",
+        "device": "cpu",
+        "inference_time_ms": 1857.03,
+        "logits_shape": "(7,)",
+        "logits": [
+          6.7e-05,
+          0.001172,
+          0.073046,
+          0.692496,
+          0.024841,
+          0.208208,
+          0.000171
+        ],
+        "probabilities": [
+          6.7e-05,
+          0.001172,
+          0.073046,
+          0.692496,
+          0.024841,
+          0.208208,
+          0.000171
+        ],
+        "predicted_class_index": 3,
+        "predicted_emotion": "happy",
+        "confidence": 0.692496,
+        "status": "\u2713 Inference complete"
+      }
+    }
+  ]
+}

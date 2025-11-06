@@ -1,0 +1,105 @@
+======================================================================
+INFERENCE TRACE STARTED: recording.wav
+Timestamp: 2025-11-06T10:48:52.902313Z
+======================================================================
+
+[STAGE] 1. AUDIO_LOADED
+----------------------------------------------------------------------
+  sample_rate: 48000
+  duration_seconds: 3.303
+  waveform_shape: (158558,)
+  dtype: float32
+  num_channels: 1
+  min_amplitude: -0.128815
+  max_amplitude: 0.135956
+  mean_amplitude: 0.0
+  status: ✓ Audio decoded successfully
+
+[STAGE] 2. RESAMPLING
+----------------------------------------------------------------------
+  original_sample_rate: 48000
+  target_sample_rate: 22050
+  new_waveform_shape: torch.Size([1, 72838])
+  resampled: Yes
+  status: ✓ Resampling complete
+
+[STAGE] 4. MEL_SPECTROGRAM
+----------------------------------------------------------------------
+  sample_rate: 22050
+  n_fft: 1024
+  hop_length: 256
+  n_mels: 128
+  mel_shape: torch.Size([1, 128, 285])
+  mel_min: 0.0
+  mel_max: 291.766785
+  mel_mean: 0.324874
+  status: ✓ MelSpectrogram generated
+
+[STAGE] 5. DB_CONVERSION
+----------------------------------------------------------------------
+  db_shape: torch.Size([1, 128, 285])
+  db_min: -100.0
+  db_max: 24.65036
+  db_mean: -50.797333
+  transform: AmplitudeToDB
+  status: ✓ dB conversion complete
+
+[STAGE] 6. NORMALIZATION
+----------------------------------------------------------------------
+  before_mean: -50.797333
+  before_std: 29.895334
+  after_mean: 0.0
+  after_std: 1.0
+  normalized_shape: torch.Size([1, 128, 285])
+  method: z-score (mean=0, std=1)
+  formula: (x - mean) / (std + 1e-6)
+  status: ✓ Normalization complete
+
+[STAGE] 7. RESIZE
+----------------------------------------------------------------------
+  original_shape: torch.Size([1, 128, 285])
+  target_size: (128, 128)
+  final_shape: torch.Size([1, 128, 128])
+  interpolation_method: bilinear
+  align_corners: False
+  status: ✓ Resize complete
+
+[STAGE] PARAMETER_VALIDATION
+----------------------------------------------------------------------
+  training_params: {'SAMPLE_RATE': 22050, 'N_MELS': 128, 'N_FFT': 1024, 'HOP_LENGTH': 256, 'TARGET_SIZE': 128, 'POWER': 2.0, 'NORMALIZE_METHOD': 'z-score'}
+  inference_params: {'SAMPLE_RATE': 22050, 'N_MELS': 128, 'N_FFT': 1024, 'HOP_LENGTH': 256, 'TARGET_SIZE': 128, 'POWER': 2.0, 'NORMALIZE_METHOD': 'z-score'}
+  mismatches: None
+  status: ✓ All parameters match
+
+[STAGE] 8. MODEL_INPUT_VALIDATION
+----------------------------------------------------------------------
+  input_shape: (1, 1, 128, 128)
+  expected_shape: (1, 1, 128, 128)
+  shape_match: ✓ Yes
+  dtype: torch.float32
+  device: cpu
+  min_value: -1.645831
+  max_value: 2.523439
+  has_nan: False
+  has_inf: False
+  status: ✓ Input valid
+
+[STAGE] 9. MODEL_INFERENCE
+----------------------------------------------------------------------
+  model_name: best_efficientnet_v2_m+vgg16+densenet121.pt
+  device: cpu
+  inference_time_ms: 2807.89
+  logits_shape: (7,)
+  logits: [0.000114, 4.5e-05, 0.892007, 0.047015, 0.000473, 0.060315, 3.1e-05]
+  probabilities: [0.000114, 4.5e-05, 0.892007, 0.047015, 0.000473, 0.060315, 3.1e-05]
+  predicted_class_index: 2
+  predicted_emotion: fear
+  confidence: 0.892007
+  status: ✓ Inference complete
+
+======================================================================
+INFERENCE TRACE COMPLETED
+======================================================================
+
+Trace saved to: logs\inference_trace\trace_20251106_104852_902313_recording.wav.log
+JSON trace saved to: logs\inference_trace\trace_20251106_104852_902313_recording.wav.json

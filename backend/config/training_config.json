@@ -1,0 +1,54 @@
+{
+  "model_info": {
+    "name": "best_efficientnet_v2_m+vgg16+densenet121",
+    "architecture": "Ensemble (EfficientNetV2-M + VGG16 + DenseNet121)",
+    "trained_date": "2024-2025",
+    "validation_accuracy": 0.7441,
+    "validation_f1": 0.7442,
+    "notebook": "Ai.ipynb (Phase 1B: 02_NoiseReduction_Normalization_GPU.ipynb)"
+  },
+  "preprocessing": {
+    "SAMPLE_RATE": 22050,
+    "N_FFT": 1024,
+    "HOP_LENGTH": 256,
+    "N_MELS": 128,
+    "TARGET_DURATION": 4.0,
+    "TARGET_SAMPLES": 88200,
+    "DESIRED_TIME_FRAMES": 128,
+    "NOISE_REDUCTION": true,
+    "RMS_NORMALIZATION": true,
+    "PAD_TRIM": true,
+    "SCALE": "dB",
+    "NORMALIZATION": "zscore",
+    "DB_CONVERSION": true,
+    "INTERPOLATION_MODE": "bilinear",
+    "ALIGN_CORNERS": false,
+    "NOISE_REDUCTION_OFFLINE": 1.0,
+    "NOISE_REDUCTION_LIVE": 0.3,
+    "NORMALIZATION_LIVE": "peak",
+    "NORMALIZATION_OFFLINE": "rms"
+  },
+  "model_inference": {
+    "APPLY_SOFTMAX_IN_BACKEND": false,
+    "REASON": "Ensemble model applies softmax internally during forward pass",
+    "OUTPUT_TYPE": "probabilities",
+    "NORMALIZE_OUTPUT": true,
+    "NORMALIZATION_METHOD": "divide_by_sum"
+  },
+  "classes": [
+    "angry",
+    "disgust",
+    "fear",
+    "happy",
+    "neutral",
+    "sad",
+    "surprise"
+  ],
+  "num_classes": 7,
+  "notes": {
+    "softmax": "Model outputs are already softmaxed probabilities (averaged from 3 models)",
+    "preprocessing": "Must match training pipeline exactly - no deviations allowed",
+    "normalization": "Per-sample z-score normalization (not global dataset statistics)"
+  }
+}
+
