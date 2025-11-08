@@ -1,0 +1,37 @@
+======================================================================
+INFERENCE TRACE STARTED: recording.wav
+Timestamp: 2025-11-07T12:37:07.023141Z
+======================================================================
+
+[STAGE] 8. MODEL_INPUT_VALIDATION
+----------------------------------------------------------------------
+  input_shape: (1, 1, 128, 128)
+  expected_shape: (1, 1, 128, 128)
+  shape_match: ✓ Yes
+  dtype: torch.float32
+  device: cpu
+  min_value: -0.962105
+  max_value: 2.108943
+  has_nan: False
+  has_inf: False
+  status: ✓ Input valid
+
+[STAGE] 9. MODEL_INFERENCE
+----------------------------------------------------------------------
+  model_name: best_efficientnet_v2_m+vgg16+densenet121.pt
+  device: cpu
+  inference_time_ms: 280.85
+  logits_shape: (7,)
+  logits: [8.4e-05, 0.003718, 0.042075, 0.00019, 0.001869, 0.951959, 0.000105]
+  probabilities: [8.4e-05, 0.003718, 0.042075, 0.00019, 0.001869, 0.951959, 0.000105]
+  predicted_class_index: 5
+  predicted_emotion: sad
+  confidence: 0.951959
+  status: ✓ Inference complete
+
+======================================================================
+INFERENCE TRACE COMPLETED
+======================================================================
+
+Trace saved to: logs\inference_trace\trace_20251107_123707_023056_recording.wav.log
+JSON trace saved to: logs\inference_trace\trace_20251107_123707_023056_recording.wav.json
