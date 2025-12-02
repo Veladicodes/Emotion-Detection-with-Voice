@@ -1,6 +1,0 @@
-{"timestamp": "2025-11-07T11:58:57.069622Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
-{"timestamp": "2025-11-07T11:59:41.847581Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
-{"timestamp": "2025-11-07T11:59:42.081121Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
-{"timestamp": "2025-11-07T11:59:42.081214Z", "level": "INFO", "logger": "system", "message": "Server starting", "event_type": "startup", "version": "4.0.0-tier0"}
-{"timestamp": "2025-11-07T11:59:44.037968Z", "level": "INFO", "logger": "system", "message": "Model preloaded successfully", "event_type": "model_loaded", "device": "cpu"}
-{"timestamp": "2025-11-07T12:01:18.593769Z", "level": "INFO", "logger": "system", "message": "Server shutting down", "event_type": "shutdown"}

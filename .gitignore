@@ -1,0 +1,30 @@
+# Python & ML
+__pycache__/
+*.pyc
+*.pt
+*.pth
+*.onnx
+*.h5
+*.pkl
+
+# Virtual envs
+venv/
+env/
+
+# Logs
+logs/
+*.log
+
+# Audio or dataset samples
+*.wav
+*.flac
+*.mp3
+
+# Local config or secrets
+*.env
+.DS_Store
+
+# Output / trained models & artifacts
+phase3_outputs/
+training_outputs/
+models/
