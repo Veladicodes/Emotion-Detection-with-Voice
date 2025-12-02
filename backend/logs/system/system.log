@@ -127,3 +127,44 @@
 {"timestamp": "2025-11-07T16:36:53.559908Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
 {"timestamp": "2025-11-07T16:36:53.560059Z", "level": "INFO", "logger": "system", "message": "Server starting", "event_type": "startup", "version": "4.0.0-tier0"}
 {"timestamp": "2025-11-07T16:36:58.192930Z", "level": "INFO", "logger": "system", "message": "Model preloaded successfully", "event_type": "model_loaded", "device": "cpu"}
+{"timestamp": "2025-11-10T18:04:07.113092Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-11-10T18:04:07.141313Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-11-10T18:04:07.141313Z", "level": "INFO", "logger": "system", "message": "Server starting", "event_type": "startup", "version": "4.0.0-tier0"}
+{"timestamp": "2025-11-10T18:04:09.189590Z", "level": "INFO", "logger": "system", "message": "Model preloaded successfully", "event_type": "model_loaded", "device": "cpu"}
+{"timestamp": "2025-11-12T06:15:47.453168Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-11-12T06:15:47.498024Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-11-12T06:15:47.499031Z", "level": "INFO", "logger": "system", "message": "Server starting", "event_type": "startup", "version": "4.0.0-tier0"}
+{"timestamp": "2025-11-12T06:15:51.885601Z", "level": "INFO", "logger": "system", "message": "Model preloaded successfully", "event_type": "model_loaded", "device": "cpu"}
+{"timestamp": "2025-11-12T06:40:56.420656Z", "level": "INFO", "logger": "system", "message": "Server shutting down", "event_type": "shutdown"}
+{"timestamp": "2025-11-12T07:10:38.967451Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-11-12T07:10:39.011290Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-11-12T07:10:39.011849Z", "level": "INFO", "logger": "system", "message": "Server starting", "event_type": "startup", "version": "4.0.0-tier0"}
+{"timestamp": "2025-11-12T07:10:43.859913Z", "level": "INFO", "logger": "system", "message": "Model preloaded successfully", "event_type": "model_loaded", "device": "cpu"}
+{"timestamp": "2025-11-12T07:18:32.815705Z", "level": "INFO", "logger": "system", "message": "Server shutting down", "event_type": "shutdown"}
+{"timestamp": "2025-11-12T07:20:01.619933Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-11-12T07:20:01.660354Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-11-12T07:20:01.660354Z", "level": "INFO", "logger": "system", "message": "Server starting", "event_type": "startup", "version": "4.0.0-tier0"}
+{"timestamp": "2025-11-12T07:20:05.154306Z", "level": "INFO", "logger": "system", "message": "Model preloaded successfully", "event_type": "model_loaded", "device": "cpu"}
+{"timestamp": "2025-11-14T07:41:38.333423Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-11-14T07:41:38.370115Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-11-14T07:41:38.370115Z", "level": "INFO", "logger": "system", "message": "Server starting", "event_type": "startup", "version": "4.0.0-tier0"}
+{"timestamp": "2025-11-14T07:41:42.295509Z", "level": "INFO", "logger": "system", "message": "Model preloaded successfully", "event_type": "model_loaded", "device": "cpu"}
+{"timestamp": "2025-11-14T10:04:09.251053Z", "level": "INFO", "logger": "system", "message": "Server shutting down", "event_type": "shutdown"}
+{"timestamp": "2025-11-14T10:04:32.336233Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-11-14T10:04:32.374247Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-11-14T10:04:32.375248Z", "level": "INFO", "logger": "system", "message": "Server starting", "event_type": "startup", "version": "4.0.0-tier0"}
+{"timestamp": "2025-11-14T10:04:34.991978Z", "level": "INFO", "logger": "system", "message": "Model preloaded successfully", "event_type": "model_loaded", "device": "cpu"}
+{"timestamp": "2025-11-14T10:22:07.271955Z", "level": "INFO", "logger": "system", "message": "Server shutting down", "event_type": "shutdown"}
+{"timestamp": "2025-11-14T15:43:26.422925Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-11-14T15:43:26.441530Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-11-14T15:43:26.441530Z", "level": "INFO", "logger": "system", "message": "Server starting", "event_type": "startup", "version": "4.0.0-tier0"}
+{"timestamp": "2025-11-14T15:43:28.817203Z", "level": "INFO", "logger": "system", "message": "Model preloaded successfully", "event_type": "model_loaded", "device": "cpu"}
+{"timestamp": "2025-11-15T08:37:21.515923Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-11-15T08:37:21.553805Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-11-15T08:37:21.554804Z", "level": "INFO", "logger": "system", "message": "Server starting", "event_type": "startup", "version": "4.0.0-tier0"}
+{"timestamp": "2025-11-15T08:37:24.505301Z", "level": "INFO", "logger": "system", "message": "Model preloaded successfully", "event_type": "model_loaded", "device": "cpu"}
+{"timestamp": "2025-12-02T13:21:38.586078Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-12-02T13:21:38.650104Z", "level": "INFO", "logger": "system", "message": "Logging system initialized", "event_type": "startup"}
+{"timestamp": "2025-12-02T13:21:38.650104Z", "level": "INFO", "logger": "system", "message": "Server starting", "event_type": "startup", "version": "4.0.0-tier0"}
+{"timestamp": "2025-12-02T13:21:41.012814Z", "level": "INFO", "logger": "system", "message": "Model preloaded successfully", "event_type": "model_loaded", "device": "cpu"}
+{"timestamp": "2025-12-02T13:22:57.602883Z", "level": "INFO", "logger": "system", "message": "Server shutting down", "event_type": "shutdown"}

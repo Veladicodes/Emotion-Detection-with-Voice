@@ -1,0 +1,52 @@
+{
+  "timestamp": "2025-11-15T08:41:08.576684Z",
+  "filename": "recording.ogg",
+  "stages": [
+    {
+      "stage": "8. MODEL_INPUT_VALIDATION",
+      "data": {
+        "input_shape": "(1, 1, 128, 128)",
+        "expected_shape": "(1, 1, 128, 128)",
+        "shape_match": "\u2713 Yes",
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "min_value": -1.216195,
+        "max_value": 1.7078,
+        "has_nan": false,
+        "has_inf": false,
+        "status": "\u2713 Input valid"
+      }
+    },
+    {
+      "stage": "9. MODEL_INFERENCE",
+      "data": {
+        "model_name": "best_efficientnet_v2_m+vgg16+densenet121.pt",
+        "device": "cpu",
+        "inference_time_ms": 312.94,
+        "logits_shape": "(7,)",
+        "logits": [
+          0.031907,
+          0.090882,
+          0.440176,
+          0.257765,
+          0.095726,
+          0.074977,
+          0.008568
+        ],
+        "probabilities": [
+          0.031907,
+          0.090882,
+          0.440176,
+          0.257765,
+          0.095726,
+          0.074977,
+          0.008568
+        ],
+        "predicted_class_index": 2,
+        "predicted_emotion": "fear",
+        "confidence": 0.440176,
+        "status": "\u2713 Inference complete"
+      }
+    }
+  ]
+}

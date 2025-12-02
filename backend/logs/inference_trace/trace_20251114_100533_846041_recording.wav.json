@@ -1,0 +1,16 @@
+{
+  "timestamp": "2025-11-14T10:05:33.846041Z",
+  "filename": "recording.wav",
+  "stages": [
+    {
+      "stage": "\u274c ERROR in INFERENCE_PIPELINE",
+      "data": {
+        "stage": "INFERENCE_PIPELINE",
+        "error": "Error opening 'C:\\\\Users\\\\Admin\\\\AppData\\\\Local\\\\Temp\\\\tmpgwfb412d.wav': Format not recognised.",
+        "details": {
+          "exception_type": "LibsndfileError"
+        }
+      }
+    }
+  ]
+}

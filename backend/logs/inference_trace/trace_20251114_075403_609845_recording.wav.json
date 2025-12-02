@@ -1,0 +1,52 @@
+{
+  "timestamp": "2025-11-14T07:54:03.609845Z",
+  "filename": "recording.wav",
+  "stages": [
+    {
+      "stage": "8. MODEL_INPUT_VALIDATION",
+      "data": {
+        "input_shape": "(1, 1, 128, 128)",
+        "expected_shape": "(1, 1, 128, 128)",
+        "shape_match": "\u2713 Yes",
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "min_value": -1.005187,
+        "max_value": 1.966522,
+        "has_nan": false,
+        "has_inf": false,
+        "status": "\u2713 Input valid"
+      }
+    },
+    {
+      "stage": "9. MODEL_INFERENCE",
+      "data": {
+        "model_name": "best_efficientnet_v2_m+vgg16+densenet121.pt",
+        "device": "cpu",
+        "inference_time_ms": 2293.01,
+        "logits_shape": "(7,)",
+        "logits": [
+          0.150415,
+          0.844985,
+          0.001194,
+          0.000177,
+          8.5e-05,
+          0.003105,
+          3.9e-05
+        ],
+        "probabilities": [
+          0.150415,
+          0.844985,
+          0.001194,
+          0.000177,
+          8.5e-05,
+          0.003105,
+          3.9e-05
+        ],
+        "predicted_class_index": 1,
+        "predicted_emotion": "disgust",
+        "confidence": 0.844985,
+        "status": "\u2713 Inference complete"
+      }
+    }
+  ]
+}

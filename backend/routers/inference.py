@@ -13,6 +13,8 @@ from fastapi.security import HTTPAuthorizationCredentials
 import tempfile
 import os
 import time
+import subprocess
+from shutil import which
 import soundfile as sf
 import torch
 from datetime import datetime
@@ -82,25 +84,63 @@ def convert_webm_to_wav(webm_path: str) -> str:
     """
     try:
         from pydub import AudioSegment
-        
-        # Load WebM
+
+        ffmpeg_path = os.getenv("FFMPEG_BINARY") or which("ffmpeg")
+        ffprobe_path = os.getenv("FFPROBE_BINARY") or which("ffprobe")
+        if ffmpeg_path:
+            AudioSegment.converter = ffmpeg_path
+            AudioSegment.ffmpeg = ffmpeg_path
+        if ffprobe_path:
+            AudioSegment.ffprobe = ffprobe_path
+
         audio = AudioSegment.from_file(webm_path, format="webm")
-        
-        # Convert to WAV
-        wav_path = webm_path.replace('.webm', '_converted.wav')
+        wav_path = webm_path.replace(".webm", "_converted.wav")
         audio.export(wav_path, format="wav")
-        
         return wav_path
     except ImportError:
         raise HTTPException(
             status_code=500,
             detail="pydub not installed. Install with: pip install pydub"
         )
-    except Exception as e:
-        raise HTTPException(
-            status_code=400,
-            detail=f"Failed to convert WebM to WAV: {str(e)}"
-        )
+    except Exception as primary_error:
+        ffmpeg_binary = which("ffmpeg") or os.getenv("FFMPEG_BINARY")
+        if not ffmpeg_binary:
+            raise HTTPException(
+                status_code=400,
+                detail="Failed to convert WebM: ffmpeg binary not found. Install ffmpeg and ensure it is on PATH."
+            ) from primary_error
+
+        fallback_wav = webm_path.replace(".webm", "_converted.wav")
+        cmd = [
+            ffmpeg_binary,
+            "-y",
+            "-i",
+            webm_path,
+            "-ac",
+            "1",
+            fallback_wav,
+        ]
+        try:
+            result = subprocess.run(
+                cmd,
+                capture_output=True,
+                text=True,
+                check=True,
+            )
+            if not os.path.exists(fallback_wav):
+                raise RuntimeError("ffmpeg reported success but no output file was produced.")
+            return fallback_wav
+        except subprocess.CalledProcessError as ffmpeg_error:
+            stderr = ffmpeg_error.stderr.strip()
+            raise HTTPException(
+                status_code=400,
+                detail=f"Failed to convert WebM: ffmpeg error -> {stderr or 'unknown error'}"
+            ) from ffmpeg_error
+        except Exception as fallback_error:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Failed to convert WebM: {fallback_error}"
+            ) from fallback_error
 
 # Model is lazily loaded on first request (so server starts quickly)
 MODEL, DEVICE, CLASSES = None, None, None
